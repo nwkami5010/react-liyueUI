@@ -1,7 +1,4 @@
 ---
-nav:
-  title: Components
-  path: /components
 ---
 
 ## useUpdate
