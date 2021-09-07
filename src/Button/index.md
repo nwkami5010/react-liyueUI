@@ -1,43 +1,42 @@
 ---
 title: Button
-nav:
+group:
   title: Button
+nav:
+  title: '组件'
   path: /components
 ---
 
-# Button
+### 按钮类型
 
-按钮用于点击触发一个事件
+按钮分为五种类型`type`，默认是`default`。
 
-# 何时使用
+`default` | `primary` | `info` | `warning` | `danger` | `dashed` | `link` | `text`
 
-标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。
+### 按钮尺寸
 
-在 liyue-ui 中我们提供了三种按钮。
+尺寸`size`分为大、中、小，默认尺寸是中。
 
-- 默认按钮：用于没有主次之分的一组行动点。
+`lg` | `md` | `sm`
 
-- 文本按钮：用于最次级的行动点。
+### 按钮形状
 
-- 链接按钮：用于作为外链的行动点。
+通过设置`shape`属性来控制按钮形状，可设置圆形和圆角，默认不设置。
 
-提供了大中小三个不同的尺寸的按钮
+`circle` | `round`
 
-以及四种状态属性与上面配合使用。
+### 不可用状态
 
-- 主按钮: 用于主行动点，一个操作区域只能有一个主按钮。
+添加 `disabled` 属性即可让按钮处于不可用状态，同时按钮样式也会改变。
 
-- 危险：删除/移动/修改权限等危险操作，一般需要二次确认。
+### 加载中按钮
 
-- 禁用：行动点不可用的时候，一般需要文案解释。
+添加`loading`属性即可让按钮处于加载状态。
 
-- 加载中：用于异步操作等待反馈的时候，也可以避免多次提交。
+### Block 按钮
 
-# 代码演示
+`block`属性将使按钮适合其父宽度，默认不设置。
 
-<code src="./demos/basic.tsx" />
-<code src="./demos/size.tsx" />
-<code src="./demos/level.tsx" />
-<code src="./demos/disabled.tsx"/>
-<code src="./demos/loading.tsx" />
-<API src="./Button.tsx"/>
+### 图标按钮
+
+当需要在 Button 内嵌入 Icon 时，可以设置`icon`属性，或者直接在 Button 内使用 Icon 组件。
