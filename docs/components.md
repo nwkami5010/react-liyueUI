@@ -18,7 +18,7 @@ liyue-ui 提供了简单易学的 react 组件
 
 - [Switch 开关](components/switch)
 
-- [Input 输入框](components/input/input)
+- [Input 输入框](components/input)
 
 ## 反馈
 

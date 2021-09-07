@@ -1,45 +1,99 @@
-import React from 'react';
-import classnames from 'classnames';
-import './Button.scss';
+import React, { FC } from 'react';
+import classNames from 'classnames';
+import '../style'
 
-interface ButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'> {
-  theme?: 'button' | 'link' | 'text';
-  size?: 'small' | 'normal' | 'big';
-  level?: 'main' | 'danger' | 'normal';
-  disabled?: boolean;
-  loading?: Boolean;
+export type ButtonType =
+  | 'default'
+  | 'primary'
+  | 'info'
+  | 'warning'
+  | 'danger'
+  | 'dashed'
+  | 'link'
+  | 'text'
+
+export type ButtonSize = 'lg' | 'md' | 'sm'
+export type ButtonShape = 'circle' | 'round'
+export type ButtonHTMLTypes = 'submit' | 'button' | 'reset'
+
+interface BasicButtonProps {
+  type?: ButtonType
+  size?: ButtonSize
+  shape?: ButtonShape
+  disabled?: boolean
+  loading?: boolean
+  block?: boolean
+  className?: string
+  href?: string
+  icon?: React.ReactNode
+  children?: React.ReactNode
 }
 
-const Button: React.FC<ButtonProps> = (props) => {
-  const {
-    children,
-    className,
-    theme,
-    size,
-    level,
-    disabled,
-    loading,
-    ...rest
-  } = props;
-  const classes = classnames('l-button', className, {
-    [`l-theme-${theme}`]: theme,
-    [`l-size-${size}`]: size,
-    [`l-level-${level}`]: level,
-  });
-  return (
-    <button className={classes} disabled={disabled} {...rest}>
-      {loading && <span className="l-loadingIndicator" />}
-      {children}
-    </button>
-  );
-};
-Button.defaultProps = {
-  theme: 'button',
-  size: 'normal',
-  level: 'normal',
-  disabled: false,
-  loading: false,
-};
+type NativeButtonProps = {
+  htmlType?: ButtonHTMLTypes
+  target?: string
+  onClick?: React.MouseEventHandler<HTMLElement>
+} & BasicButtonProps &
+  Omit<React.ButtonHTMLAttributes<HTMLElement>,'type'>
 
-export default Button;
+type AnchorButtonProps = {
+  href?: string
+  onClick?: React.MouseEventHandler<HTMLElement>
+} & BasicButtonProps &
+  Omit<React.AnchorHTMLAttributes<HTMLElement>,'type'>
+
+export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
+
+const Button: FC<ButtonProps> =({
+  type,
+  size,
+  shape,
+  disabled,
+  loading,
+  block,
+  className,
+  href,
+  icon,
+  children,
+  htmlType,
+  ...restProps
+                                }) =>{
+  const classes = classNames('mk-btn',className,{
+    [`mk-btn-${type}`]: type,
+    [`mk-btn-${size}`]: size,
+    [`mk-btn-${shape}`]: shape,
+    'mk-btn-loading':loading,
+    'mk-btn-block': block,
+    'mk-btn-icon-only': icon,
+  })
+
+  if(type === 'link' && href) {
+    return (
+      <a className={classes} href={href}{...restProps}>
+        {children}
+      </a>
+    )
+  }
+  return (
+    <button
+      type={htmlType}
+      className={classes}
+      disabled={disabled}
+      {...restProps}
+    >
+      {icon}
+      {children}
+      </button>
+  )
+}
+
+Button.defaultProps = {
+  disabled: false,
+  type: 'default',
+  size: 'md',
+  block: false,
+  loading: false,
+  htmlType: 'button',
+  icon: null,
+}
+export default Button
