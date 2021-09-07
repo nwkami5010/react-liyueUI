@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
-import '../style'
+import '../style/index.scss';
 
 export type ButtonType =
   | 'default'
