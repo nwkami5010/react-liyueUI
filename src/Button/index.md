@@ -23,13 +23,7 @@ nav:
 
 <code src="./demo/size.tsx" />
 
-### 按钮形状
 
-通过设置`shape`属性来控制按钮形状，可设置圆形和圆角，默认不设置。
-
-`circle` | `round`
-
-<code src="./demo/shape.tsx" />
 
 ### 禁止使用状态
 
@@ -37,9 +31,7 @@ nav:
 
 <code src="./demo/disabled.tsx" />
 
-### 加载中按钮
 
-添加`loading`属性即可让按钮处于加载状态。
 
 
 
@@ -50,9 +42,19 @@ nav:
 <code src="./demo/block.tsx" />
 
 
+### API
 
-### 图标按钮
+通过设置 Button 的属性来产生不同的按钮样式，推荐顺序为：`type` > `size` -> `disabled`。
 
-当需要在 Button 内嵌入 Icon 时，可以设置`icon`属性，或者直接在 Button 内使用 Icon 组件。
+按钮的属性说明如下：
 
-<code src="./demo/icon.tsx" />
+| 属性     | 说明                                                  | 类型                                                                                      | 默认值    |
+| -------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------- | --------- |
+| block    | 将按钮宽度调整为其父宽度的选项                        | boolean                                                                                   | false     |
+| disabled | 按钮失效状态                                          | boolean                                                                                   | false     |
+| href     | 点击跳转的地址，指定此属性 button 的行为和 a 链接一致 | string                                                                                    | -         |
+| htmlType | 设置 `button` 原生的 `type` 值                        | string                                                                                    | `button`  |
+| size     | 设置按钮大小                                          | `lg` \| `md` \| `sm`                                                                      | `md`      |
+| type     | 设置按钮类型                                          | `primary` \| `info` \| `warning` \| `danger` \| `dashed` \| `link` \| `text` \| `default` | `default` |
+| onClick  | 点击按钮时的回调                                      | (event) => void                                                                           | -         |
+支持原生 button 的其他所有属性。

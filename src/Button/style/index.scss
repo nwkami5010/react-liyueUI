@@ -12,10 +12,10 @@
   background-image: none;
   border: $btn-border-width solid transparent;
   @include button-size(
-      $btn-padding-y,
-      $btn-padding-x,
-      $btn-font-size,
-      $border-radius
+    $btn-padding-y,
+    $btn-padding-x,
+    $btn-font-size,
+    $border-radius
   );
   box-shadow: $btn-box-shadow;
   cursor: pointer;
@@ -33,12 +33,12 @@
 // type
 .mk-btn-default {
   @include button-style(
-      $white,
-      $gray-400,
-      $body-color,
-      $white,
-      $primary,
-      $primary
+    $white,
+    $gray-400,
+    $body-color,
+    $white,
+    $primary,
+    $primary
   );
 }
 
@@ -65,12 +65,12 @@
 
 .mk-btn-dashed {
   @include button-style(
-      $white,
-      $gray-400,
-      $body-color,
-      $white,
-      $primary,
-      $primary
+    $white,
+    $gray-400,
+    $body-color,
+    $white,
+    $primary,
+    $primary
   );
   border-style: dotted;
 }
@@ -100,28 +100,28 @@
 // size
 .mk-btn-lg {
   @include button-size(
-      $btn-padding-y-lg,
-      $btn-padding-x-lg,
-      $btn-font-size-lg,
-      $btn-border-radius-lg
+    $btn-padding-y-lg,
+    $btn-padding-x-lg,
+    $btn-font-size-lg,
+    $btn-border-radius-lg
   );
 }
 
 .mk-btn-md {
   @include button-size(
-      $btn-padding-y-md,
-      $btn-padding-x-md,
-      $btn-font-size-md,
-      $btn-border-radius-md
+    $btn-padding-y-md,
+    $btn-padding-x-md,
+    $btn-font-size-md,
+    $btn-border-radius-md
   );
 }
 
 .mk-btn-sm {
   @include button-size(
-      $btn-padding-y-sm,
-      $btn-padding-x-sm,
-      $btn-font-size-sm,
-      $btn-border-radius-sm
+    $btn-padding-y-sm,
+    $btn-padding-x-sm,
+    $btn-font-size-sm,
+    $btn-border-radius-sm
   );
 }
 
@@ -144,11 +144,15 @@
 }
 
 // icon
-.mk-btn-icon-only {
-  width: 32px;
-  height: 32px;
-  padding: 2.4px 0;
-  font-size: 16px;
-  border-radius: 2px;
-  vertical-align: -1px;
-}
+// .mk-btn-icon-only {
+//   width: 32px;
+//   height: 32px;
+//   padding: 2.4px 0;
+//   font-size: 16px;
+//   border-radius: 2px;
+// }
+
+// .mk-btn > .anticon + span,
+// .mk-btn > span + .anticon {
+//   margin-left: 8px;
+// }

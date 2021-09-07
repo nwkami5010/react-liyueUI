@@ -2,6 +2,12 @@ import React, { FC } from 'react';
 import classNames from 'classnames';
 import '../style/index.scss';
 
+const isString = (children: React.ReactNode) => {
+  if (typeof children === 'string') {
+    return <span>{children}</span>
+  }
+  return children
+}
 export type ButtonType =
   | 'default'
   | 'primary'
@@ -19,13 +25,13 @@ export type ButtonHTMLTypes = 'submit' | 'button' | 'reset'
 interface BasicButtonProps {
   type?: ButtonType
   size?: ButtonSize
-  shape?: ButtonShape
+
   disabled?: boolean
   loading?: boolean
   block?: boolean
   className?: string
   href?: string
-  icon?: React.ReactNode
+
   children?: React.ReactNode
 }
 
@@ -47,13 +53,13 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 const Button: FC<ButtonProps> =({
   type,
   size,
-  shape,
+
   disabled,
   loading,
   block,
   className,
   href,
-  icon,
+
   children,
   htmlType,
   ...restProps
@@ -61,10 +67,8 @@ const Button: FC<ButtonProps> =({
   const classes = classNames('mk-btn',className,{
     [`mk-btn-${type}`]: type,
     [`mk-btn-${size}`]: size,
-    [`mk-btn-${shape}`]: shape,
     'mk-btn-loading':loading,
     'mk-btn-block': block,
-    'mk-btn-icon-only': icon,
   })
 
   if(type === 'link' && href) {
@@ -74,6 +78,7 @@ const Button: FC<ButtonProps> =({
       </a>
     )
   }
+  const kids = isString(children)
   return (
     <button
       type={htmlType}
@@ -81,8 +86,8 @@ const Button: FC<ButtonProps> =({
       disabled={disabled}
       {...restProps}
     >
-      {icon}
-      {children}
+      {kids}
+
       </button>
   )
 }
@@ -93,7 +98,7 @@ Button.defaultProps = {
   size: 'md',
   block: false,
   loading: false,
-  htmlType: 'button',
-  icon: null,
+  htmlType: 'button'as ButtonProps['htmlType'],
+
 }
 export default Button
