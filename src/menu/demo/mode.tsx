@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import  Menu  from '../menu'
+// @ts-ignore
 import {Button} from 'react-liyueUI';
 import {MenuMode} from '../menu';
 
