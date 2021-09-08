@@ -71,9 +71,11 @@ const SubMenu: FC<SubMenuProps> =({
     )
   }
 
+
   return (
     <li style={style} className={classes} {...handleEvents}>
       <div className="l-submenu-title" {...clickEvents}>
+        // @ts-ignore
         {title}
         <DownOutlined className="arrow-icon" />
       </div>
