@@ -22,10 +22,10 @@ const Alert: FC<AlertProps> = ({
   onClose,
 }) => {
   const [closed,setClosed] = useState(false)
-  const classes = classNames('mk-alert', 'className', {
-    [`mk-alert-${type}`]: type,
+  const classes = classNames('l-alert', 'className', {
+    [`l-alert-${type}`]: type,
   })
-  const titleClass = classNames('mk-alert-message')
+  const titleClass = classNames('l-alert-message')
 
   const handleClose = (e:React.MouseEvent<HTMLElement, MouseEvent>) =>{
     setClosed(true)
@@ -36,9 +36,9 @@ const Alert: FC<AlertProps> = ({
     <Transition in={!closed} timeout={300} animation="zoom-in-left">
       <div className={classes}>
         <span className={titleClass}> { message }</span>
-        {description && <p className="mk-alert-desc"> {description}</p>}
+        {description && <p className="l-alert-desc"> {description}</p>}
         {closable && (
-          <span className="mk-alert-close" onClick={handleClose}>
+          <span className="l-alert-close" onClick={handleClose}>
             <CloseOutlined/>
           </span>
         )}

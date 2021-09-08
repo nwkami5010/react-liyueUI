@@ -64,11 +64,11 @@ const Button: FC<ButtonProps> =({
   htmlType,
   ...restProps
                                 }) =>{
-  const classes = classNames('mk-btn',className,{
-    [`mk-btn-${type}`]: type,
-    [`mk-btn-${size}`]: size,
-    'mk-btn-loading':loading,
-    'mk-btn-block': block,
+  const classes = classNames('l-btn',className,{
+    [`l-btn-${type}`]: type,
+    [`l-btn-${size}`]: size,
+    'l-btn-loading':loading,
+    'l-btn-block': block,
   })
 
   if(type === 'link' && href) {

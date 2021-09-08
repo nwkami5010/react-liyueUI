@@ -1,6 +1,6 @@
 @import 'mixins';
 
-.mk-btn {
+.l-btn {
   position: relative;
   display: inline-block;
   font-weight: $btn-font-weight;
@@ -31,7 +31,7 @@
   }
 }
 // type
-.mk-btn-default {
+.l-btn-default {
   @include button-style(
     $white,
     $gray-400,
@@ -42,28 +42,28 @@
   );
 }
 
-.mk-btn-primary {
+.l-btn-primary {
   @include button-style($primary, $primary, $white);
 }
 
-.mk-btn-info {
+.l-btn-info {
   @include button-style($info, $info, $white);
 }
 
-.mk-btn-warning {
+.l-btn-warning {
   @include button-style($warning, $warning, $white);
 }
 
-.mk-btn-danger {
+.l-btn-danger {
   @include button-style($danger, $danger, $white);
 }
 
-.mk-btn-text {
+.l-btn-text {
   @include button-style(transparent, transparent, $body-color);
   box-shadow: none;
 }
 
-.mk-btn-dashed {
+.l-btn-dashed {
   @include button-style(
     $white,
     $gray-400,
@@ -75,7 +75,7 @@
   border-style: dotted;
 }
 
-.mk-btn-link {
+.l-btn-link {
   font-weight: $font-weight-normal;
   color: $btn-link-color;
   text-decoration: $link-decoration;
@@ -98,7 +98,7 @@
 }
 
 // size
-.mk-btn-lg {
+.l-btn-lg {
   @include button-size(
     $btn-padding-y-lg,
     $btn-padding-x-lg,
@@ -107,7 +107,7 @@
   );
 }
 
-.mk-btn-md {
+.l-btn-md {
   @include button-size(
     $btn-padding-y-md,
     $btn-padding-x-md,
@@ -116,7 +116,7 @@
   );
 }
 
-.mk-btn-sm {
+.l-btn-sm {
   @include button-size(
     $btn-padding-y-sm,
     $btn-padding-x-sm,
@@ -126,7 +126,7 @@
 }
 
 // shape
-.mk-btn-circle {
+.l-btn-circle {
   min-width: 32px;
   padding-right: 0;
   padding-left: 0;
@@ -134,17 +134,17 @@
   border-radius: 50%;
 }
 
-.mk-btn-round {
+.l-btn-round {
   border-radius: 30%;
 }
 
 // block
-.mk-btn-block {
+.l-btn-block {
   width: 100%;
 }
 
 // icon
-// .mk-btn-icon-only {
+// .l-btn-icon-only {
 //   width: 32px;
 //   height: 32px;
 //   padding: 2.4px 0;
@@ -152,7 +152,7 @@
 //   border-radius: 2px;
 // }
 
-// .mk-btn > .anticon + span,
-// .mk-btn > span + .anticon {
+// .l-btn > .anticon + span,
+// .l-btn > span + .anticon {
 //   margin-left: 8px;
 // }
