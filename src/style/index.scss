@@ -1,16 +1,13 @@
 @import './theme';
-
 @import './core';
-
 // button
 @import '../button/style/index.scss';
 @import '../alert/style/index.scss';
 // menu
-
 @import '../menu/style';
 // alert
-
 @import '../alert/style';
 // Tabs
-
 @import "../tabs/style";
+// Input
+@import '../input/style';
