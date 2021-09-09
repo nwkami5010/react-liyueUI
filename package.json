@@ -2,6 +2,7 @@
   "private": true,
   "name": "react-liyueUI",
   "version": "1.0.0",
+  "homepage": "https://nwkami5010.github.io/react-liyueUI/",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
