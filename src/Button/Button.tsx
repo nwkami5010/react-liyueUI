@@ -39,7 +39,7 @@ type NativeButtonProps = {
   htmlType?: ButtonHTMLTypes
   target?: string
   onClick?: React.MouseEventHandler<HTMLElement>
-} & BasicButtonProps &
+} & BasicButtonProps &  //交叉类型
   Omit<React.ButtonHTMLAttributes<HTMLElement>,'type'>
 
 type AnchorButtonProps = {
@@ -47,7 +47,7 @@ type AnchorButtonProps = {
   onClick?: React.MouseEventHandler<HTMLElement>
 } & BasicButtonProps &
   Omit<React.AnchorHTMLAttributes<HTMLElement>,'type'>
-
+///Partial 可选
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
 const Button: FC<ButtonProps> =({
@@ -64,7 +64,7 @@ const Button: FC<ButtonProps> =({
   htmlType,
   ...restProps
                                 }) =>{
-  const classes = classNames('l-btn',className,{
+  const classes = classNames('l-btn',className,{ // className 用户自定义
     [`l-btn-${type}`]: type,
     [`l-btn-${size}`]: size,
     'l-btn-loading':loading,
