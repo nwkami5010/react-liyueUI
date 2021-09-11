@@ -13,14 +13,5 @@ export default defineConfig({
   resolve: {
     includes: ['docs', 'components','hooks'],
   },
-  extraBabelPlugins: [
-    [
-      'babel-plugin-import',
-      {
-        libraryName: 'antd',
-        libraryDirectory: 'es',
-        style: true,
-      },
-    ],
-  ],
+
 });
