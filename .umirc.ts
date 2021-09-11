@@ -10,8 +10,12 @@ export default defineConfig({
   // more config: https://d.umijs.org/config
   publicPath: '/react-liyueUI/',
   exportStatic: {},
-  resolve: {
-    includes: ['docs', 'components','hooks'],
-  },
 
+  navs: [
+    null,
+    {
+      title: 'Github',
+      path: 'https://github.com/Jacky-Summer/monki-ui',
+    },
+  ],
 });
