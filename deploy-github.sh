@@ -19,3 +19,4 @@ git push -f -u origin gh-pages &&
 cd -
 
 echo
+https://nwkami5010.github.io/react-liyueUI/

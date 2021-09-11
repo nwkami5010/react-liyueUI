@@ -10,6 +10,9 @@ export default defineConfig({
   // more config: https://d.umijs.org/config
   publicPath: '/react-liyueUI/',
   exportStatic: {},
-
+  history: {
+    type: 'hash',
+  },
+  sass: {},
 
 });
