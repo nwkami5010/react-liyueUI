@@ -10,18 +10,3 @@ nav:
 
 liyue-ui 提供了简单易学的 react 组件
 
-### 基础组件
-
-- [Button 按钮](components/button)
-
-### 数据录入
-
-- [Switch 开关](components/switch)
-
-- [Input 输入框](components/input)
-
-## 反馈
-
-- [Dialog 对话框](components/dialog)
-
-- [Toast 吐司](components/toast)
