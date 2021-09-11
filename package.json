@@ -1,6 +1,7 @@
 {
   "private": true,
   "name": "react-liyueUI",
+  "homepage": "https://nwkami5010.github.io/react-liyueUI/",
   "version": "1.0.0",
   "homepage": "https://nwkami5010.github.io/react-liyueUI/",
   "scripts": {
@@ -12,7 +13,12 @@
     "release": "npm run build && npm publish",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json,scss}\"",
     "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
+    "test:coverage": "umi-test --coverage",
+    "lint:fix": "eslint --fix \"src/**/*.+(js|jsx|ts|tsx|json)\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nwkami5010/react-liyueUI"
   },
   "repository": {
     "type": "git",
@@ -57,8 +63,8 @@
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.1",
     "yorkie": "^2.0.0",
-    "node-sass": "^6.0.1",
-    "sass-loader": "^12.1.0",
+    "node-sass": "6.0.1",
+    "sass-loader": "12.1.0",
     "react-icons": "^4.2.0",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
@@ -72,7 +78,7 @@
     "@wojtekmaj/enzyme-adapter-react-17": "0.3.2",
     "commitizen": "^4.2.1",
     "cz-conventional-changelog": "^3.3.0",
-    "dart-sass": "^1.25.0",
+    "dart-sass": "1.25.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
@@ -83,7 +89,7 @@
     "husky": "^4.3.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
-
+    "axios": "^0.19.2",
     "react-dom": "16.14.0",
     "rimraf": "^3.0.2",
     "standard-version": "^9.0.0",
