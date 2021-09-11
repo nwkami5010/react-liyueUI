@@ -8,4 +8,19 @@ export default defineConfig({
   outputPath: 'docs-dist',
   mode: 'site',
   // more config: https://d.umijs.org/config
+  publicPath: '/react-liyueUI/',
+  exportStatic: {},
+  resolve: {
+    includes: ['docs', 'components','hooks'],
+  },
+  extraBabelPlugins: [
+    [
+      'babel-plugin-import',
+      {
+        libraryName: 'antd',
+        libraryDirectory: 'es',
+        style: true,
+      },
+    ],
+  ],
 });
