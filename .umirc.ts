@@ -11,11 +11,5 @@ export default defineConfig({
   publicPath: '/react-liyueUI/',
   exportStatic: {},
 
-  navs: [
-    null,
-    {
-      title: 'Github',
-      path: 'https://github.com/Jacky-Summer/monki-ui',
-    },
-  ],
+
 });
