@@ -1,0 +1,49 @@
+language: node_js
+
+node_js:
+  - 12
+
+cache: yarn
+
+install:
+  - yarn
+script:
+  - yarn test
+  - yarn build
+
+jobs:
+  include:
+    - stage: general
+      if: branch = development AND commit_message !~ /\[skip publish\]/
+
+
+      deploy:
+        - provider: npm
+          email: $NPM_EMAIL
+          api_key: $NPM_TOKEN
+          skip_cleanup: true
+          on:
+            branch: development
+          tag: next
+
+    - stage: general
+      if: branch = master AND commit_message !~ /\[skip publish\]/
+
+
+      deploy:
+        - provider: pages
+          github_token: GITHUB_TOKEN
+          skip_cleanup: true
+          keep_history: true
+          local_dir: docs-dist
+          target-branch: gh-pages
+          on:
+            branch: master
+
+        - provider: npm
+          email: $NPM_EMAIL
+          api_key: $NPM_TOKEN
+          skip_cleanup: true
+          keep_history: true
+          on:
+            branch: master

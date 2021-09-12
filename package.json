@@ -3,6 +3,7 @@
   "name": "react-liyueUI",
   "homepage": "https://nwkami5010.github.io/react-liyueUI/",
   "version": "1.0.0",
+  "homepage": "https://nwkami5010.github.io/react-liyueUI/",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -14,6 +15,10 @@
     "test": "jest",
     "test:coverage": "umi-test --coverage",
     "lint:fix": "eslint --fix \"src/**/*.+(js|jsx|ts|tsx|json)\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nwkami5010/react-liyueUI"
   },
   "repository": {
     "type": "git",
@@ -36,6 +41,9 @@
   "resolutions": {
     "remark": "12.0.0"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@ant-design/icons": "^4.3.0",
     "react": "^16.12.0",
