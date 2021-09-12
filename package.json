@@ -11,7 +11,7 @@
     "deploy": "npm run docs:build && npm run docs:deploy",
     "release": "npm run build && npm publish",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json,scss}\"",
-    "test": "umi-test",
+    "test": "jest",
     "test:coverage": "umi-test --coverage",
     "lint:fix": "eslint --fix \"src/**/*.+(js|jsx|ts|tsx|json)\""
   },
@@ -61,9 +61,9 @@
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@types/cheerio": "^0.22.22",
-
     "@types/enzyme": "^3.10.8",
     "@types/jest": "^26.0.15",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/react-transition-group": "^4.4.0",
     "@typescript-eslint/eslint-plugin": "^4.4.0",
     "@typescript-eslint/parser": "^4.4.0",
