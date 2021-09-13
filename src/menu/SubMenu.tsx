@@ -12,15 +12,20 @@ export interface SubMenuProps {
   style?: React.CSSProperties
 }
 
-const SubMenu: FC<SubMenuProps> = ({ index, title, className, style, children }) => {
-  const { key, mode, defaultOpenKeys } = useContext(MenuContext)
+const SubMenu: FC<SubMenuProps> =({
+  index,
+  className,
+  style,
+  children
+}) => {
+  const {key,mode,defaultOpenKeys} = useContext(MenuContext)
   const openedSubMenus = defaultOpenKeys as Array<string>
-  const isOpened = index && mode === 'inline' ? openedSubMenus.includes(index) : false
-  const [menuOpen, setOpen] = useState(isOpened)
-  const classes = classNames('l-menu-item l-submenu-item', className, {
+  const isOpened = index && mode === 'inline'? openedSubMenus.includes(index) : false
+  const [menuOpen,setOpen ] = useState(isOpened)
+  const classes = classNames('l-menu-item l-submenu-item',className,{
     'is-active': key === index,
     'is-opened': menuOpen,
-    'is-inline': mode === 'inline',
+    'is-inline':mode === 'inline',
   })
 
   const handleClick = (e: React.MouseEvent) => {
@@ -29,36 +34,33 @@ const SubMenu: FC<SubMenuProps> = ({ index, title, className, style, children })
   }
 
   let timer: number
-  const handleMouse = (e: React.MouseEvent, toggle: boolean) => {
+  const handleMouse = (e: React.MouseEvent,toggle: boolean) => {
     clearTimeout(timer)
     e.preventDefault()
-    timer = window.setTimeout(() => {
+    timer = window.setTimeout(()=> {
       setOpen(toggle)
-    }, 100)
+    },100)
   }
 
-  const handleEvents =
-    mode !== 'inline'
-      ? {
-        onMouseEnter: (e: React.MouseEvent) => handleMouse(e, true),
-        onMouseLeave: (e: React.MouseEvent) => handleMouse(e, false),
-      }
-      : {}
+  const handleEvents = mode !== 'inline'? {
+    onMouseEnter: (e:React.MouseEvent) => handleMouse(e,true),
+    onMouseLeave: (e:React.MouseEvent) => handleMouse(e,false),
+  }
+  : {}
 
-  const clickEvents = mode === 'inline' ? { onClick: handleClick } : {}
+  const clickEvents = mode === 'inline' ? {onClick:handleClick} : {}
 
   const renderChildren = () => {
     const subMenuClasses = classNames('l-submenu', {
       'menu-opened': menuOpen,
     })
-    const childrenComponent = React.Children.map(children, (child, i) => {
+    const childrenComponent = React.Children.map(children,(child,i) => {
       const childElement = child as FunctionComponentElement<MenuItemProps>
-      if (childElement.type.displayName === 'MenuItem') {
+      if(childElement.type.displayName === 'MenuItem') {
         return React.cloneElement(childElement, {
           index: `${index}-${i}`,
         })
       }
-      // eslint-disable-next-line no-console
       console.error('Warning: SubMenu has a child which is not a MenuItem component')
     })
 
@@ -69,9 +71,11 @@ const SubMenu: FC<SubMenuProps> = ({ index, title, className, style, children })
     )
   }
 
+
   return (
     <li style={style} className={classes} {...handleEvents}>
       <div className="l-submenu-title" {...clickEvents}>
+        // @ts-ignore
         {title}
         <DownOutlined className="arrow-icon" />
       </div>
@@ -79,7 +83,10 @@ const SubMenu: FC<SubMenuProps> = ({ index, title, className, style, children })
     </li>
   )
 }
-
 SubMenu.displayName = 'SubMenu'
 
+
+
+
 export default SubMenu
+
