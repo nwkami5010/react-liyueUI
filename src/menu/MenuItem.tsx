@@ -1,30 +1,31 @@
-import React,{ FC,useContext,CSSProperties} from 'react';
-
+import React, { FC, useContext, CSSProperties } from 'react'
 import classNames from 'classnames'
-import MenuContext from './MenuContext';
+import MenuContext from './MenuContext'
 
 export interface MenuItemProps {
   index?: string
   className?: string
   style?: CSSProperties
-  disabled?:boolean
+  disabled?: boolean
 }
 
 const MenuItem: FC<MenuItemProps> = ({
-  index,
-  className,
-  style,
-  disabled,
-  children,
-}) => {
+                                       index,
+                                       className,
+                                       style,
+                                       disabled,
+                                       children,
+                                     }) => {
   const context = useContext(MenuContext)
-  const classes = classNames('l-menu-item',className, {
+  const classes = classNames('l-menu-item', className, {
     'is-disabled': disabled,
+    // eslint-disable-next-line react/destructuring-assignment
     'is-active': context.key === index,
   })
-  const handleClick =()=> {
+
+  const handleClick = () => {
     const { onClick } = context
-    if(onClick && !disabled && typeof index === 'string') {
+    if (onClick && !disabled && typeof index === 'string') {
       onClick(index)
     }
   }

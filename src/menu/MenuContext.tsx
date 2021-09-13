@@ -1,5 +1,6 @@
-import React from 'react';
-import { MenuMode, SelectCallback} from './menu';
+
+import React from 'react'
+import { MenuMode, SelectCallback } from './menu'
 
 export interface IMenuContext {
   key: string
@@ -8,7 +9,6 @@ export interface IMenuContext {
   defaultOpenKeys?: string[]
 }
 
-const MenuContext =
-  React.createContext<IMenuContext>({ key: '0'})
+const MenuContext = React.createContext<IMenuContext>({ key: '0' })
 
 export default MenuContext
