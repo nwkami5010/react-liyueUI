@@ -10,7 +10,7 @@ nav:
 ---
 
  # useCreation
-  [博客](https://www.yuque.com/wuchanongmo/wseknh/lvgdvy)
+  >[详细源码解析](https://www.yuque.com/wuchanongmo/wseknh/lvgdvy)
  `useCreation` 是 `useMemo` 或 `useRef` 的替代品。
 
  因为 `useMemo` 不能保证被memo的值一定不会被重计算，而 `useCreation` 可以保证这一点。
@@ -35,5 +35,5 @@ function useCreation<T>(factory: () => T, deps: any[]): T ;
  ### 参数
  | 参数    | 说明                                         | 类型                   | 默认值 |
 |---------|----------------------------------------------|------------------------|--------|
-| factory | 用来创建所需对象的函数  | () => (void | (() => void | undefined)) | -      |
+| factory | 用来创建所需对象的函数  | () => (void ) | () => void \| undefined | -      |
 | deps | 传入依赖变化的对象  | array \| undefined | -      |
